@@ -1,35 +1,54 @@
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Second(){
-          return(
-                 <div className="relative -z-10 bg-black  pt-20 ">
+  
+  return(
+                 <div className="relative  bg-black  pt-20 ">
                     <Icons></Icons>
-                    <Steps></Steps>       
+                    <Steps></Steps> 
+                    
                  </div>
           );
 }
 function Steps(){
-          const [plan,setPlan] = useState(0);
-
+          const [plan,setplan] = useState(2);
           return(
-                    <div className="text-white font-font-OpenSan-Condensed  flex flex-col justify-center items-center">
+                    <div className="text-white font-font-OpenSan-Condensed  flex flex-col justify-center items-center z-0">
                               <div className="text-center text-3xl py-4"><h3>Just 3 steps to the best documentaries on the planet:</h3></div>
-                              <div className="flex flex-col justify-center items-center px-3">
+                              <div className="flex flex-col justify-center items-center px-3 my-5">
                                         <div className="scale-90 brightness-110 text-center h-14  w-14 font-semibold rounded-full bg-gradient-to-br from-yellow-500 via-orange-400 text-3xl text-black to-yellow-500 pt-2"><h5>1</h5></div>
-                                        <div className="my-2 text-2xl text-center ">Confirm the subscription that is right for you.</div>
+                                        <div className="my-2 text-2xl text-center text-gray-200 ">Confirm the subscription that is right for you.</div>
+                                        <div className="my-0 text-xs text-center text-gray-400">Choose between monthly, annual subscriptions</div>
                               </div>
-                    
-                              <div>
-                                 <div onClick={()=>setPlan(1)}  className="w-full mx-auto"><Pack1></Pack1></div>
-                                 <div onClick={()=>setPlan(2)}  className="w-full mx-auto"><Pack2></Pack2></div>
-                                 <div onClick={()=>setPlan(3)}  className="w-full mx-auto"><Pack1></Pack1></div>
-                              </div>
-                              <div className="flex flex-col justify-center items-center px-3">
+                            
+                              
+                              <div className="flex flex-col justify-center items-center px-3 my-5">
                                         <div className="scale-90 brightness-110 text-center h-14  w-14 font-semibold rounded-full bg-gradient-to-br from-yellow-500 via-orange-400 text-3xl text-black to-yellow-500 pt-2"><h5>2</h5></div>
-                                        <div className="text-2xl text-center">Create your account.</div>
+                                        <div className="text-2xl text-center text-gray-200 ">Create your account.</div>
+                                        <div className="my-0 text-xs text-center text-gray-400">Gain access to Curiosity stream anytime, anywhere</div>
+                              </div>
+
+                              <div className="flex flex-col justify-center items-center px-3 my-5">
+                                        <div className="scale-90 brightness-110 text-center h-14  w-14 font-semibold rounded-full bg-gradient-to-br from-yellow-500 via-orange-400 text-3xl text-black to-yellow-500 pt-2"><h5>3</h5></div>
+                                        <div className="text-2xl text-center text-gray-200 ">Get Comfy on couch and enjoy</div>
+                                        <div className="my-0 text-xs text-center text-gray-400">Sometimes, the simple things are more fun and meaningful<br></br> than all the banquets in the world.</div>
                               </div>
                              
-                              
+                              <div className="flex flex-col justify-start item-center my-8 space-y-1">
+                                <div>
+                                  <Link href="/signUp"><a>
+                                  <div className="flex flex-row item-center justify-center space-x-2 p-2 rounded shadow-2xl shadow-yellow-600/50 tracking-wider text-lg text-center text-gray-900 font-sans font-medium bg-gradient-to-br from-yellow-500 via-orange-400  to-yellow-500">
+                                    <div>Get Started</div>
+                                    <div><svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 12l-18 12v-24z"/></svg></div>
+                                  </div>
+                                  </a></Link>
+                                </div>
+                                <div><h3 className="font-sans text-yellow-600 text-sm">or redeem a Curiosity Stream gift card</h3></div>
+                              </div>
+                              <div className=" mt-7 mb-14">
+                                <div><h3 className="text-lg text-center scale-90 font-sans tracking-wide text-yellow-500 ">Want a sneak peek of our library?<br></br> <strong>Click here!</strong></h3></div>
+                              </div>
                     </div>
           );
 }
@@ -52,48 +71,8 @@ function Icons(){
                                                <div className="w-16 h-16"><svg viewBox="0 0 61 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary text-yellow-500"><path d="M21.909 38.59L39.091 21.41M21.909 21.409l17.182 17.182" stroke="#F7F7F7" strokeWidth="2" strokeLinecap="square"></path><circle cx="30.5" cy="30" r="29" stroke="currentColor" strokeWidth="2"></circle></svg></div>
                                                <div className="pt-2">Cancel your plan anytime</div>
                                      </div>
+                                     
                     </div>
           );
 }
-function Pack1(){
-          
-          return(
-          
-                    <div  className="border-2 hover:border-yellow-500 hover:border-4 font-font-OpenSan-Condensed mx-auto px-3 py-5 bg-gray-800 w-11/12 rounded flex flex-col ">
-                              <div className="text-left text-3xl font-normal tracking-wider"><strong>Standard (HD)</strong></div>
-                              <div className="text-left font-thin my-2 tracking-wider text-2xl"><h5>Monthly</h5></div>
-                              <div className="text-left font-thin text-sm "><h5>Most flexible</h5></div>
-                              <div className="text-center flex flex-row space-x-2 justify-end items-start">
-                                        <div className="font-medium text-xl">USD</div>
-                                        <div className="font-bold text-5xl">$2</div>
-                                        <div className="text-left font-light text-sm flex flex-col items-start justify-center">
-                                                  <div >.99</div>
-                                                  <div >/month</div>
-                                        </div>
-                              </div>
-                              <div>
-                                        <div></div>
-                                        <div></div>
-                              </div>
-                              
-                    </div>
-          
-          );
-}
-function Pack2(){
-          return(
-                    <div className="font-font-OpenSan-Condensed mx-auto px-3 py-5 bg-gray-800 w-11/12 rounded flex flex-col ">
-                              <div className="text-left text-3xl font-normal tracking-wider"><strong>Standard (HD)</strong></div>
-                              <div className="text-left font-thin my-2 tracking-wider text-2xl"><h5>Annual</h5></div>
-                              <div className="text-left font-thin text-sm "><h5>Most popular & best in value</h5></div>
-                              <div className="text-center flex flex-row space-x-2 justify-end items-start">
-                                        <div className="font-medium text-xl">USD</div>
-                                        <div className="font-bold text-5xl">$19</div>
-                                        <div className="text-left font-light text-sm flex flex-col items-start justify-center">
-                                                  <div >.99</div>
-                                                  <div >/year</div>
-                                        </div>
-                              </div>
-                    </div>
-          );
-}
+
